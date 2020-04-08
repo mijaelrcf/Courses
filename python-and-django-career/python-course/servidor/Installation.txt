@@ -1,0 +1,46 @@
+En Python la comunidad comparte su código usando PyPi (python package index), es un repositorio para instalar módulos de la comunidad.
+
+Con pip install [nombre] se puede instalar el paquete que deseas.
+
+Podemos utilizar requirements.txt para ordenar los paquetes que requiere tu proyecto.
+
+Ambiente virtual
+
+Nos permite encapsular un proyecto para poder instalar las versiones de los paquetes que se requieran sin tenerlos que instalar en todo el sistema operativo.
+
+Crear un entorno virtual
+
+Dentro de la carpeta de tu proyecto ejecutas
+virtualenv venv
+
+Encender un entorno virtual
+source venv/bin/activate
+
+Ver las dependencias instaladas en el entorno virtual
+pip freeze
+
+Instalar dependencias del archivo requirements
+pip install -r requirements.txt
+
+** PARA WINDOWS 
+Para los que usan Python3 con Windows 10:
+1.Creas la carpeta donde estará el entorno virtual
+
+mkdir servidor
+2.Dirigete a la nueva carpeta que creaste
+
+cd servidor
+3.Crea el entorno virtual con el comando:
+python3 -m venv /ruta/a/tu/carpeta/nueva/servidor
+
+donde “venv” es el nombre del entorno virtual y puede ser cualquier nombre
+
+4.Activa el entorno virtual con el comando:
+
+/ruta/a/tu/carpeta/servidor/Scripts/activate.bat
+5.Una vez ya activado el entorno, instala flask
+pip install flask
+
+6.Ya que esté instalado, ya puedes correr los programas de Python. En tu editor de código, abre la carpeta donde está el entorno virtual y crea el main.py dentro de la carpeta “Lib/site-packages”.
+
+Espero les sirva

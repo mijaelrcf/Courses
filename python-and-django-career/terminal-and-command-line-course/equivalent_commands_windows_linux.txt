@@ -1,0 +1,31 @@
+Comando DOS	                                                	Comando Linux
+cd directorio	                                            		cd directorio
+dir, dir/w	                                                	ls, ls -l
+chdir (directorio actual)	                                	pwd
+del (borra un archivo)	                                    		rm
+deltree (borra un directorio y todo su contenido)	        	rm -r
+copy	                                                    		cp
+xcopy (copia todo el contenido de un directorio)	        	cp -R
+rename, move	                                            		mv
+type (imprime el contenido de un archivo a la pantalla)	    		cat
+help, [comando]/?							man
+cls (limpia la pantalla)						clear
+find (busca por una palabra(s) en un determinado archivo)		grep
+fc (compara 2 archivos y encuentra diferencias entre ellos)		diff
+set (muestra variable de entorno)					env
+set variable (fija una variable de entorno)					export
+edit nombre-de-archivo							vi archivo, pico archivo, nano -w archivo (varios basados en el editor de tu preferencia)
+attrib +h archivo (fija un archivo como oculto)				mv file .file
+mem (muestra la memoria disponible)					free, top
+scandisk								fsck
+defrag c:\								debugfs
+format									mke2fs, mk32fs -j, mkreiserfs, mkswap, etc. (varios basados en el sistema de archivos de tu preferencia)
+pkzip (crea un paquete de archivos)					tar, utilizado en conjunto con gzip para compresión)
+tracert									traceroute	
+ipconfig (visualiza dirección IP y configuración de red)		ifconfig
+nbtstat -a nombrehost (toma la información DNS de un determinado host)	nslookup nombrehost
+route print (muestra tablas de ruteo)					route -n
+net send host/ip message (envia un mensaje a otro computador)		smbclient -M Windows Host, talk (Linux hosts)
+
+reference:
+https://archivogeek.com/182/lista-de-comandos-equivalentes-de-ms-dos-en-linux/
