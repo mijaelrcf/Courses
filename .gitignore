@@ -3,3 +3,4 @@ lib
 __pycache__
 *.jpg
 pv.egg-info
+.vscode
