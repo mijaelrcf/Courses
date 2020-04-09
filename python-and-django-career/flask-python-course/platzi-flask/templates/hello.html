@@ -8,6 +8,10 @@
 {% endblock %}
 
 {% block content %}
+    {% if username %}
+        <h1>Bienvenido, {{ username | capitalize }}</h1>
+    {% endif %}
+
     {% if user_ip %}
         <h1>Hello world Flask. tu IP es {{ user_ip }}</h1>
     {% else %}
@@ -19,9 +23,8 @@
             {{ login_form.username }}
             {{ login_form.username.label }}
         </form> -->
-        {{ wtf.quick_form(login_form)}}
+        {{ wtf.quick_form(login_form) }}
     </div>
-
     
     <ul>
         {% for todo in todos %}
