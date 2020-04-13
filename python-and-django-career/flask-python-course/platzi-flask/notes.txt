@@ -46,3 +46,11 @@ install firebase-admin
 gcloud config list
 gcloud config set project db-platzi-flask
 
+# deploy app in gcloud
+gcloud app deploy app.yaml
+# update app (new version)
+gcloud app deploy app.yaml --version x.x.x
+
+
+# to install in heroku
+pip install flask gunicorn
