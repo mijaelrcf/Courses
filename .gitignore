@@ -5,3 +5,4 @@ __pycache__
 pv.egg-info
 .vscode
 db.sqlite3
+.env
