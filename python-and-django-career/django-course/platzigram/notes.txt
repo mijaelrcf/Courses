@@ -1,0 +1,32 @@
+# create virtual environment MAC 
+python3 -m venv .env
+
+# create virtual environment WINDOWS
+python -m venv .env
+
+# run virtual environment MAC 
+source .env/bin/activate 
+
+# run virtual environment WINDOWS
+source .env/Scripts/activate
+source ../.env/Scripts/activate
+
+# stop virtual environment
+deactivate
+
+# install django 
+pip install django -U
+
+# show commands django
+django-admin
+
+django-admin startproject platzigram .
+
+# show commands django and other 
+python manage.py
+
+# run server django
+python manage.py runserver
+
+# to debug inline
+import pdb; pdb.set_trace()
