@@ -30,3 +30,9 @@ python manage.py runserver
 
 # to debug inline
 import pdb; pdb.set_trace()
+
+# resolve warnings servers (aplica los cambios en nuestra base de datos)
+ python manage.py migrate
+
+ # save migrations in db (makemigrations busca los cambios en los modelos y los refleja en un archivo)
+ python manage.py makemigrations
