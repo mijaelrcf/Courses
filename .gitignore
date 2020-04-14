@@ -4,3 +4,4 @@ __pycache__
 *.jpg
 pv.egg-info
 .vscode
+db.sqlite3
