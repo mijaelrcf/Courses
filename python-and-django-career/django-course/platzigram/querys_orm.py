@@ -20,6 +20,19 @@ platzi_users = User.objects.filter(email__endswith='@platzi.com')
 for u in platzi_users:
     print(u.email, ':', u.is_admin)
 
-pu = User.objects.filter(email__endswith='@platzi.com').update(is_admin=True)
+platzi_users = User.objects.filter(email__endswith='@platzi.com').update(is_admin=True)
+
+platzi_users = User.objects.filter(email__endswith='@platzi.com')
+for u in platzi_users:
+    print(u.email, ':', u.is_admin)
+
+
+# use auth django
+from django.contrib.auth.models import User
+u = User.objects.create_user(username='yesika', password='admin123')
+u.password
+# >>> 'pbkdf2_sha256$180000$UVZBVWdfHsgd$VZWxPalxWT1JfckT7SVrhRUI24iEZJ5ZQ1MmbTLl5Qg='
+# pass key derivation function sha256 con 180 mil iteracion y el secret_key de la app
+
 
 
