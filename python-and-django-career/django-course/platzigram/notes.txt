@@ -36,3 +36,9 @@ import pdb; pdb.set_trace()
 
  # save migrations in db (makemigrations busca los cambios en los modelos y los refleja en un archivo)
  python manage.py makemigrations
+
+# open django console (shell python with framework django)
+python manage.py shell
+
+# exec file inside idle python 
+exec(open("insert_users.py").read())
