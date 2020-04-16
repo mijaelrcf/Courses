@@ -42,3 +42,13 @@ python manage.py shell
 
 # exec file inside idle python 
 exec(open("insert_users.py").read())
+
+# create super user django
+python manage.py createsuperuser
+# problems with git bash use: wimpty
+winpty python manage.py createsuperuser
+
+#python manage.py startapp posts
+
+# create app
+python manage.py startapp users
