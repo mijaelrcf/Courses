@@ -2,6 +2,7 @@ venv
 lib
 __pycache__
 *.jpg
+*.png
 pv.egg-info
 .vscode
 db.sqlite3
