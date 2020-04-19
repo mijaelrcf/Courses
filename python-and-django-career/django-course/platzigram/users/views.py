@@ -4,6 +4,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
+# Exceptions
+from django.db.utils import IntegrityError
+
+# Models
+from django.contrib.auth.models import User
+from users.models import Profile
+
 # Create your views here.
 def login_view(request):
     """Login view."""
@@ -20,6 +27,35 @@ def login_view(request):
             return render(request, 'users/login.html', {'error': 'Invalid username and password'})
         
     return render(request, 'users/login.html')
+
+def signup(request):
+    """Sign up view."""
+    #import pdb; pdb.set_trace()
+    if request.method == 'POST':
+        username = request.POST['username']
+        passwd = request.POST['password']
+        passwd_confirmation = request.POST['password_confirmation']
+
+        if passwd != passwd_confirmation:
+            return render(request, 'users/signup.html', {'error': 'Password confirmation does not match'})
+        
+        try:
+            user = User.objects.create_user(username=username, password=passwd)
+            print(user)
+        except IntegrityError:
+            return render(request, 'users/signup.html', {'error': 'Username is already in user'})
+
+        user.first_name = request.POST['first_name']
+        user.last_name = request.POST['last_name']
+        user.email = request.POST['email']
+        user.save()
+
+        profile = Profile(user=user)
+        profile.save()
+
+        return redirect('login')
+
+    return render(request, 'users/signup.html')
 
 @login_required
 def logout_view(request):
