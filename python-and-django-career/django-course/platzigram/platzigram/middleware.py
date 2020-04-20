@@ -5,7 +5,7 @@ from django.urls import reverse
 class ProfileCompletionMiddleware:
     """Profile completion middleware
 
-    Ensure every user tht is interacting with the platform
+    Ensure every user that is interacting with the platform
     have their profile picture and biography.
     """
 
