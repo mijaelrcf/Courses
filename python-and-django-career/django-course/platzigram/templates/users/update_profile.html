@@ -51,7 +51,7 @@
                     <div class="form-group">
                         <label>Biography</label>
                         <textarea 
-                            class="form-control {% if form.biography.errors %}is-invalid {% endif %}"
+                            class="form-control {% if form.biography.errors %}is-invalid{% endif %}"
                             name="biography"
                         >{% if form.errors %}{{ form.biography.value }}{% else %}{{ profile.biography }}{% endif %}</textarea>
 
