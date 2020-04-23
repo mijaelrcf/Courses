@@ -7,13 +7,6 @@ from django.urls import path
 from users import views
 
 urlpatterns = [
-    
-    # Posts
-    path(
-        route = '<str:username>/', #slug
-        view= views.UserDetailView.as_view(),
-        name='detail'
-    ),
 
     # Managment
     path(
@@ -27,13 +20,20 @@ urlpatterns = [
         name='logout'
         ),
     path(
-        route = 'users/signup/', 
-        view = views.signup, 
+        route = 'signup/', 
+        view = views.SignupView.as_view(), 
         name='signup'
     ),
     path(
         route = 'me/profile/', 
-        view = views.update_profile, 
+        view = views.UpdateProfileView.as_view(), 
         name='update'
+    ),
+
+    # Posts
+    path(
+        route = '<str:username>/', #slug
+        view= views.UserDetailView.as_view(),
+        name='detail'
     ),
 ]
