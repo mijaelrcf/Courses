@@ -9,6 +9,7 @@ db.sqlite3
 .env
 .*
 bin/
+obj/
 
 ### Python template
 # Byte-compiled / optimized / DLL files
