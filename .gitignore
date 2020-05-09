@@ -8,7 +8,7 @@ pv.egg-info
 db.sqlite3
 .env
 .*
-bin
+bin/
 
 ### Python template
 # Byte-compiled / optimized / DLL files
