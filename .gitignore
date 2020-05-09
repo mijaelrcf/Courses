@@ -7,6 +7,7 @@ pv.egg-info
 .vscode
 db.sqlite3
 .env
+.*
 
 ### Python template
 # Byte-compiled / optimized / DLL files
