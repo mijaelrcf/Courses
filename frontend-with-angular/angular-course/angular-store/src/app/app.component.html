@@ -1,2 +1,11 @@
 <input type="text" [(ngModel)]="title">
 {{ title }}
+
+<div *ngIf="1 === 1">
+  este es un ejemplo de *ngIf
+</div>
+
+Escribe el texto "show" y aparecera un div:
+<div *ngIf="title === 'show'">
+  hola soy un div!
+</div>
