@@ -7,7 +7,8 @@ pv.egg-info
 .vscode
 db.sqlite3
 .env
-.*
+#.*
+.envs/
 bin/
 obj/
 
