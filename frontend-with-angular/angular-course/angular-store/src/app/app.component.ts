@@ -8,6 +8,8 @@ import { Product } from './product.model';
 })
 export class AppComponent {
   title = 'angular-store';
+  textTest = '';
+  name = '';
 
   items = ['mijael', 'rodrigo', 'callejas'];
 
