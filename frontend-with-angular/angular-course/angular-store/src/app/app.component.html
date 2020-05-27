@@ -2,6 +2,12 @@ Example of ngModel <br>
 <input type="text" [(ngModel)]="titlePage">
 {{ titlePage }}
 
+<br>
+Custom Pipes 
+<br>
+<input type="text" [(ngModel)]="power">
+{{ power | exponential }}
+
 <br><br>
 <div *ngIf="1 === 1">
   este es un ejemplo de *ngIf

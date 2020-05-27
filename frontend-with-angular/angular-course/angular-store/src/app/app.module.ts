@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 // Local
 import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
+import { ExponentialPipe } from './exponential.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    CartComponent // Local
+    CartComponent,
+    ExponentialPipe // Local
   ],
   imports: [
     BrowserModule,
