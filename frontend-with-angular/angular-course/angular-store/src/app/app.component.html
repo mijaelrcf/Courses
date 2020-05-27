@@ -1,8 +1,6 @@
 Example of ngModel <br>
-<input type="text" [(ngModel)]="title">
-{{ title }}
-
-<app-product></app-product>
+<input type="text" [(ngModel)]="titlePage">
+{{ titlePage }}
 
 <br><br>
 <div *ngIf="1 === 1">
@@ -45,8 +43,6 @@ ngFor
 
 ngFor with objects 
 <div *ngFor="let product of products">
-  {{ product.title }}
-  <img [src]="product.image" alt="">
-  {{ product.price }}
+  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
 </div>
 

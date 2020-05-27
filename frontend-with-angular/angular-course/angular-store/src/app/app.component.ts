@@ -7,7 +7,7 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-store';
+  titlePage = 'angular-store';
   textTest = '';
   name = '';
 
@@ -64,5 +64,10 @@ export class AppComponent {
 
   deleteItem(index: number) {
     this.items.splice(index, 1);
+  }
+
+  clickProduct(id: number) {
+    console.log('product');
+    console.log(id);
   }
 }
