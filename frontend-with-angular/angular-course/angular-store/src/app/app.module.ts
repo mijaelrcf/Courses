@@ -1,24 +1,21 @@
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// Local
-import { FormsModule } from '@angular/forms';
 
-// Angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Local
-//import { CartComponent } from './cart/cart.component';
+import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule  } from './core/core.module';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    //CartComponent,
     LayoutComponent
   ],
   imports: [
@@ -26,7 +23,8 @@ import { CoreModule  } from './core/core.module';
     AppRoutingModule,
     FormsModule, // Local
     SharedModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
