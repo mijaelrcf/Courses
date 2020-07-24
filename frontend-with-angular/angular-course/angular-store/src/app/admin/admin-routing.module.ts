@@ -18,7 +18,7 @@ const routes: Routes = [
       {
         path: 'create',
         component: ProductFormComponent
-      },      
+      },
       {
         path: 'table',
         component: TableComponent
