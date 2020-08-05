@@ -10,19 +10,25 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { MaterialModule } from './../material/material.module';
+import { GroupbyPipe } from './pipes/groupby/groupby.pipe';
+import { DeleteRepeatsPipe } from './pipes/deleteRepeats/delete-repeats.pipe';
 
 @NgModule({
   declarations: [
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    GroupbyPipe,
+    DeleteRepeatsPipe,
   ],
   exports: [
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    GroupbyPipe,
+    DeleteRepeatsPipe
   ],
   imports: [
     CommonModule,
