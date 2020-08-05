@@ -27,7 +27,7 @@ export class ProductComponent implements /*OnChanges,*/ OnInit, DoCheck, OnDestr
     constructor(
         private cartService: CartService
     ) {
-        console.log('1. constructor');
+        // console.log('1. constructor');
     }
 
     // ngOnChanges(changes: SimpleChanges) {
@@ -36,15 +36,15 @@ export class ProductComponent implements /*OnChanges,*/ OnInit, DoCheck, OnDestr
     // }
 
     ngOnInit() {
-        console.log('3. ngOnInit');
+        // console.log('3. ngOnInit');
     }
 
     ngDoCheck() {
-        console.log('4. ngDoCkeck');
+        // console.log('4. ngDoCkeck');
     }
 
     ngOnDestroy() {
-        console.log('5. ngOnDestroy');
+        // console.log('5. ngOnDestroy');
     }
 
     addCart(){
