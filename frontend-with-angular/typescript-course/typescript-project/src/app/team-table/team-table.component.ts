@@ -20,8 +20,8 @@ export class TeamTableComponent implements OnInit {
 
   ngOnInit() {
     this.teams$ = this.teamService.getTeams();
-    this.teamService.getTeams().pipe(take(1)).subscribe( teams => {
-      if(teams.length === 0){
+    this.teamService.getTeams().pipe(take(1)).subscribe(teams => {
+      if (teams.length === 0) {
         const team: Team = {
           name: 'MyAmazingTeam',
           country: Countries.Argentina,
