@@ -12,8 +12,15 @@ import { NgForm } from '@angular/forms';
 })
 export class PlayerDialogComponent implements OnInit {
   private team;
-  public countries = Object.keys(Countries).map(key => ({label: key, key: Countries[key]}));
-  public squadNumber = Object.keys(SquadNumber).slice(Object.keys(SquadNumber).length / 2);
+  public countries = Object.keys(Countries).map(key => ({ label: key, key: Countries[key] }));
+  public squadNumber = Object.keys(SquadNumber)
+    .slice(Object.keys(SquadNumber).length / 2)
+    .map(key => ({
+      label: key,
+      key: SquadNumber[key]
+    }));
+  //public countries = Object.keys(Countries).map(key => ({label: key, key: Countries[key]}));
+  //public squadNumber = Object.keys(SquadNumber).slice(Object.keys(SquadNumber).length / 2);
   constructor(private playerService: PlayerService, private teamService: TeamService) { }
 
   ngOnInit() {
