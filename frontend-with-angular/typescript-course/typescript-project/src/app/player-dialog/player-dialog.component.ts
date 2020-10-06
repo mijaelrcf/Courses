@@ -50,32 +50,31 @@ export class PlayerDialogComponent implements OnInit {
 
   private editPlayer(playerFormValue) {
     const playerFormValueWithKey = { ...playerFormValue, $key: this.player.$key };
-    const playerFormValueWithFormattedKey = { ...playerFormValue, $key: this.player.$key };
+    const playerFormValueWithFormattedKey = { ...playerFormValue, key: this.player.$key };
     delete playerFormValueWithFormattedKey.$key;
-    const modifiedPlayers = this.team.player
-      ? this.team.player.map(player => {
-        return player.key === this.player.$key ? playerFormValueWithFormattedKey : player;
-      })
+    const moddifiedPlayers = this.team.players
+      ? this.team.players.map(player => {
+          return player.key === this.player.$key ? playerFormValueWithFormattedKey : player;
+        })
       : this.team.players;
     const formattedTeam = {
       ...this.team,
-      players: [...(modifiedPlayers ? modifiedPlayers : [playerFormValueWithFormattedKey])]
+      players: [...(moddifiedPlayers ? moddifiedPlayers : [playerFormValueWithFormattedKey])]
     };
     this.playerService.editPlayer(playerFormValueWithKey);
-    this.teamService.editTeam(formattedTeam)
+    this.teamService.editTeam(formattedTeam);
   }
 
   onSubmit(playerForm: NgForm) {
     const playerFormValue = { ...playerForm.value };
     if (playerForm.valid) {
-      playerFormValue.leftFooted = playerFormValue.leftFooted === '';
+      playerFormValue.leftFooted = playerFormValue.leftFooted === '' ? false : playerFormValue.leftFooted;
     }
     if (this.player) {
       this.editPlayer(playerFormValue);
     } else {
       this.newPlayer(playerFormValue);
     }
-    this.newPlayer(playerFormValue);
     window.location.replace('#');
   }
 

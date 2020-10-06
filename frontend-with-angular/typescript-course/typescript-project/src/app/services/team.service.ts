@@ -19,7 +19,7 @@ export class TeamService {
   getTeams(): Observable<Team[]> {
     return this.teamsDb.snapshotChanges().pipe(
       map(changes => {
-        return changes.map(c => ({ $key: c.payload.key, ... c.payload.val() }));
+        return changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }));
       })
     );
   }

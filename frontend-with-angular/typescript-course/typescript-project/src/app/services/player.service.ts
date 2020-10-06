@@ -14,10 +14,10 @@ export class PlayerService {
     this.playersDb = this.db.list('/players', ref => ref.orderByChild('name'));
   }
 
-  getPlayers(): Observable<Player[]>{
+  getPlayers(): Observable<Player[]> {
     return this.playersDb.snapshotChanges().pipe(
       map(changes => {
-        return changes.map(c => ({ $key: c.payload.key, ... c.payload.val() }));
+        return changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }));
       })
     );
   }
