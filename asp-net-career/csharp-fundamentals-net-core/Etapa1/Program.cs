@@ -64,6 +64,25 @@ namespace Etapa1
             //escuela = null;
             ImprimirCursosEscuela(escuela);
 
+            bool rta = 10 == 10;
+            int cantidad = 10;
+
+            if(rta == false)
+            {
+                //hago algo
+                WriteLine("Se cumplio la condicion 1");
+            }
+            else if(cantidad > 15)
+            {
+                //hago otra cosa
+                WriteLine("Se cumplio la condicion 2");
+            }
+            else
+            {
+                //hacer otra cosa si no cumple
+                WriteLine("NO se cumplio la condicion 2");
+            }
+
             // System.Console.WriteLine(escuela);
             // System.Console.WriteLine("==============");
             // System.Console.WriteLine("While");
