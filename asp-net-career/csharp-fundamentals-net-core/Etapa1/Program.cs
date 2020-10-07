@@ -35,6 +35,37 @@ namespace Etapa1
             System.Console.WriteLine(curso3.Nombre + ", " + curso3.UniqueId);
             System.Console.WriteLine($"{curso4.Nombre} , {curso4.UniqueId}");
             System.Console.WriteLine(curso5);
+
+            var arregloCursos = new Curso[3];
+            arregloCursos[0] = new Curso()            
+            {
+                Nombre = "101"
+            };
+
+            var curso2 = new Curso()
+            {
+              Nombre = "201"  
+            };
+            arregloCursos[1] = curso2;
+
+            arregloCursos[2] = new Curso
+            {
+                Nombre = "301"
+            };
+
+            System.Console.WriteLine(escuela);
+            System.Console.WriteLine("==============");
+            ImprimirCursos(arregloCursos);
+        }
+
+        private static void ImprimirCursos(Curso[] arregloCursos)
+        {
+            int contador = 0;
+            while (contador < arregloCursos.Length)
+            {
+                Console.WriteLine($"Nombre {arregloCursos[contador].Nombre}, Id {arregloCursos[contador].UniqueId}");
+                contador = contador++;
+            }
         }
     }
 }
