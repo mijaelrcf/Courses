@@ -129,17 +129,29 @@ namespace Etapa1
             Curso tmp = new Curso{Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
             //otraCollection.Clear();            
             
-            //escuela.ListCursos.AddRange(otraCollection);
-            escuela.ListCursos.Add(tmp);
+            escuela.ListCursos.AddRange(otraCollection);
+            //escuela.ListCursos.Add(tmp);
 
             ImprimirCursosEscuela(escuela);
             WriteLine("Curso.Hash: " + tmp.GetHashCode());
 
-            Predicate<Curso>  miAlgoritmo = Predicado;
-            escuela.ListCursos.RemoveAll(miAlgoritmo);
+            // Predicado
+            //Predicate<Curso>  miAlgoritmo = Predicado;
+            //escuela.ListCursos.RemoveAll(miAlgoritmo);
+            
+            // Delegados
+            escuela.ListCursos.RemoveAll(delegate(Curso cur) 
+            {
+                return cur.Nombre == "301";
+            });
+
+            // Expresiones Lambda
+            escuela.ListCursos.RemoveAll((cur) => cur.Nombre == "501" && cur.Jornada == TiposJornada.Mañana);
 
             escuela.ListCursos.Remove(tmp);
             ImprimirCursosEscuela(escuela);
+
+            
         }
 
         private static int PredicadoMalHecho(string abc)
