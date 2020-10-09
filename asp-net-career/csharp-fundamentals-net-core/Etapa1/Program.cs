@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using static System.Console;
 
@@ -7,6 +8,13 @@ namespace Etapa1
     class Program
     {
         static void Main(string[] args)
+        {
+            //EtapaUno();
+            //EtapaDos();
+            EtapaTres();
+        }
+
+        private static void EtapaUno()
         {
             var escuela = new Escuela("Platzi Academy", 2012);
             escuela.Pais = "Colombia";
@@ -18,8 +26,14 @@ namespace Etapa1
             var escuela2 = new Escuela("Platzi Academy", 2012, TiposEscuela.PreEscolar,
                 pais: "Bolivia"
             );
+
             Console.WriteLine(escuela2);
 
+            System.Console.WriteLine(escuela);
+        }
+
+        private static void EtapaDos()
+        {
             var curso3 = new Curso()
             {
                 Nombre = "101"
@@ -60,19 +74,15 @@ namespace Etapa1
                 new Curso{ Nombre = "301"}
             };
 
-            escuela.Cursos = arregloCursos;
-            //escuela = null;
-            ImprimirCursosEscuela(escuela);
-
             bool rta = 10 == 10;
             int cantidad = 10;
 
-            if(rta == false)
+            if (rta == false)
             {
                 //hago algo
                 WriteLine("Se cumplio la condicion 1");
             }
-            else if(cantidad > 15)
+            else if (cantidad > 15)
             {
                 //hago otra cosa
                 WriteLine("Se cumplio la condicion 2");
@@ -83,31 +93,81 @@ namespace Etapa1
                 WriteLine("NO se cumplio la condicion 2");
             }
 
-            // System.Console.WriteLine(escuela);
-            // System.Console.WriteLine("==============");
-            // System.Console.WriteLine("While");
-            // ImprimirCursosWhile(arregloCursos);
-            // System.Console.WriteLine("DoWhile");
-            // ImprimirCursosDoWhile(arregloCursos);
-            // System.Console.WriteLine("For");
-            // ImprimirCursosFor(arregloCursos);
-            // System.Console.WriteLine("Foreach");
-            // ImprimirCursosForEach(arregloCursos);
+            System.Console.WriteLine("While");
+            ImprimirCursosWhile(arregloCursos);
+            System.Console.WriteLine("DoWhile");
+            ImprimirCursosDoWhile(arregloCursos);
+            System.Console.WriteLine("For");
+            ImprimirCursosFor(arregloCursos);
+            System.Console.WriteLine("Foreach");
+            ImprimirCursosForEach(arregloCursos);
         }
 
+        private static void EtapaTres()
+        {
+            var escuela = new Escuela("Platzi Academy", 2020);
+
+            var listaCursos = new List<Curso>()
+            {
+                new Curso() { Nombre = "101", Jornada = TiposJornada.Mañana },
+                new Curso() { Nombre = "201", Jornada = TiposJornada.Mañana },
+                new Curso{ Nombre = "301", Jornada = TiposJornada.Mañana }
+            };
+
+            escuela.ListCursos = listaCursos;
+
+            escuela.ListCursos.Add(new Curso() { Nombre = "102", Jornada = TiposJornada.Tarde });
+            escuela.ListCursos.Add(new Curso() { Nombre = "202", Jornada = TiposJornada.Tarde });
+
+            var otraCollection = new List<Curso>()
+            {
+                new Curso() { Nombre = "401", Jornada = TiposJornada.Mañana },
+                new Curso() { Nombre = "501", Jornada = TiposJornada.Mañana },
+                new Curso{ Nombre = "502", Jornada = TiposJornada.Tarde }
+            };
+
+            Curso tmp = new Curso{Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
+            //otraCollection.Clear();            
+            
+            //escuela.ListCursos.AddRange(otraCollection);
+            escuela.ListCursos.Add(tmp);
+
+            ImprimirCursosEscuela(escuela);
+            WriteLine("Curso.Hash: " + tmp.GetHashCode());
+
+            Predicate<Curso>  miAlgoritmo = Predicado;
+            escuela.ListCursos.RemoveAll(miAlgoritmo);
+
+            escuela.ListCursos.Remove(tmp);
+            ImprimirCursosEscuela(escuela);
+        }
+
+        private static int PredicadoMalHecho(string abc)
+        {
+            return 101;
+        }
+
+        private static bool Predicado(Curso curobj)
+        {
+            return curobj.Nombre == "301";
+        }
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             WriteLine("===============");
             WriteLine("Cursos Escuela");
             WriteLine("===============");
-            
-            if (escuela?.Cursos != null)
+
+            if (escuela?.ListCursos != null)
             {
-                foreach (var curso in escuela.Cursos)
+                // foreach (var curso in escuela.Cursos)
+                // {
+                //     WriteLine($"Nombre { curso.Nombre }, Id { curso.UniqueId }");
+                // }
+                foreach (var curso in escuela.ListCursos)
                 {
                     WriteLine($"Nombre { curso.Nombre }, Id { curso.UniqueId }");
-                }    
-            }            
+                }
+            }
         }
 
         private static void ImprimirCursosWhile(Curso[] arregloCursos)
