@@ -1,31 +1,32 @@
 ﻿using System;
+using CoreEscuela.Entidades;
+using CoreEscuela.Util;
+using static System.Console;
 
 namespace CoreEscuela
 {
-    class Escuela
-    {
-        public string nombre;
-        public string direccion;
-        public int añofundacion;
-        public string ceo;
-
-        public void Timbrar()
-        {
-            //Todo
-            Console.Beep(2000, 3000);
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
-            var miEscuela = new Escuela();
-            miEscuela.nombre = "Platzi Academy";
-            miEscuela.direccion = "Cr 9 calle 72";
-            miEscuela.añofundacion = 2012;
-            Console.WriteLine("TIMBRE");
-            miEscuela.Timbrar();
+            var engine = new EscuelaEngine();
+            engine.Inicializar();
+            Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
+            ImprimirCursosEscuela(engine.Escuela);
+            Printer.Pitar(5000, cantidad: 1);
+        }
+
+        private static void ImprimirCursosEscuela(Escuela escuela)
+        {
+            Printer.WriteTitle("Cursos Escuela");
+
+            if (escuela?.Cursos != null)
+            {
+                foreach (var curso in escuela.Cursos)
+                {
+                    WriteLine($"Nombre { curso.Nombre }, Id { curso.UniqueId }");
+                }
+            }
         }
     }
 }
